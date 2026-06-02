@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: Arial, sans-serif;
+    margin: 30px; 
+    max-width: 400px; 
+}
+.input-contenedor {
+    margin-bottom: 15px; 
+    display: flex; 
+    gap: 10px; 
+}
+input { 
+    flex-grow: 1; 
+    padding: 8px; 
+}
+button {
+    padding: 8px 12px; 
+    cursor: pointer; 
+}
+ul {
+    list-style-type: none;
+    padding: 0; 
+}
+li { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: #f4f4f4; 
+    margin-bottom: 8px; 
+    padding: 10px; 
+    border-radius: 4px; 
+}
+.btn-eliminar {
+    background-color: #ff4d4d; 
+    color: white;
+    border: none;
+    border-radius: 3px; 
+}

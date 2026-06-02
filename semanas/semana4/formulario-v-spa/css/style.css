@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --accent: #00f0ff;
+    --accent-pink: #ff00cc;
+    --bg-dark: #050510;
+    --panel-bg: #0d0d2b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-dark);
+    color: #e0f7ff;
+    font-family: 'Share Tech Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Estilo de Panel Arcade --- */
+.panel-arcade {
+    background: var(--panel-bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    position: relative;
+    padding: 20px;
+}
+
+.panel-arcade::before {
+    content: ''; position: absolute; top: -5px; left: -5px;
+    width: 20px; height: 20px; border-top: 3px solid var(--accent-pink); border-left: 3px solid var(--accent-pink);
+}
+
+/* --- Auth (Login/Register) --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-container .panel-arcade {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* --- Layout Dashboard --- */
+.dashboard-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user-info { display: flex; align-items: center; gap: 15px; }
+.user-avatar { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--accent-pink); }
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+/* --- Formulario --- */
+.form-container h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--accent-pink);
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--accent);
+    padding: 10px;
+    color: white;
+    margin-bottom: 15px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* --- Grid de Tarjetas --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-arcade {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-img {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid var(--accent);
+}
+
+.card-body { padding: 15px; }
+.card-body h4 { color: var(--accent); margin-bottom: 10px; }
+.card-body p { font-size: 13px; height: 40px; overflow: hidden; }
+
+/* --- Botones --- */
+button {
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    padding: 12px;
+    border: none;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-primary { background: var(--accent); color: black; width: 100%; margin-top: 10px; }
+.btn-primary:hover { background: var(--accent-pink); color: white; }
+
+.btn-secondary { background: transparent; color: var(--accent-pink); border: 1px solid var(--accent-pink); width: 100%; margin-top: 10px; }
+
+.btn-danger { background: #ff3355; color: white; }
+
+.card-footer { display: flex; gap: 5px; margin-top: 15px; }
+.btn-edit { background: #ffe600; color: black; flex: 1; }
+.btn-delete { background: #ff3355; color: white; flex: 1; }
+
+@media (max-width: 800px) {
+    .dashboard-content { grid-template-columns: 1fr; }
+}
